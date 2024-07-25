@@ -560,7 +560,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                           }
 
                                                           context.goNamedAuth(
-                                                              'paginaInicio',
+                                                              'Home',
                                                               context.mounted);
                                                         },
                                                         text: 'Iniciar Sesión',
@@ -780,7 +780,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                     }
 
                                                                     context.goNamedAuth(
-                                                                        'paginaInicio',
+                                                                        'Home',
                                                                         context
                                                                             .mounted);
                                                                   },
@@ -1351,7 +1351,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                           }
 
                                                           context.goNamedAuth(
-                                                              'paginaInicio',
+                                                              'Home',
                                                               context.mounted);
                                                         },
                                                         text: 'Crear cuenta',
@@ -1502,7 +1502,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                     }
 
                                                                     context.goNamedAuth(
-                                                                        'paginaInicio',
+                                                                        'Home',
                                                                         context
                                                                             .mounted);
                                                                   },
