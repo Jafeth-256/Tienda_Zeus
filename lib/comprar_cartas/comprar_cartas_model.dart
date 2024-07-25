@@ -1,9 +1,9 @@
 import '/components/navbar_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'home_widget.dart' show HomeWidget;
+import 'comprar_cartas_widget.dart' show ComprarCartasWidget;
 import 'package:flutter/material.dart';
 
-class HomeModel extends FlutterFlowModel<HomeWidget> {
+class ComprarCartasModel extends FlutterFlowModel<ComprarCartasWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

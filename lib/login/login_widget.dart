@@ -204,7 +204,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.normal,
                                                 ),
-                                        indicatorColor: const Color(0xFF4B39EF),
+                                        indicatorColor: const Color(0xFF7B4CC2),
                                         indicatorWeight: 4.0,
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 12.0, 16.0, 12.0),
@@ -583,7 +583,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                       0.0,
                                                                       0.0),
                                                           color:
-                                                              const Color(0xFF4B39EF),
+                                                              const Color(0xFF7B4CC2),
                                                           textStyle:
                                                               FlutterFlowTheme.of(
                                                                       context)
@@ -1374,7 +1374,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                       0.0,
                                                                       0.0),
                                                           color:
-                                                              const Color(0xFF4B39EF),
+                                                              const Color(0xFF7B4CC2),
                                                           textStyle:
                                                               FlutterFlowTheme.of(
                                                                       context)
