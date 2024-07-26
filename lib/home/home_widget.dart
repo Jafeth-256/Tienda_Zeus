@@ -398,7 +398,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                 width: 390.0,
                                 height: 1.0,
                                 decoration: const BoxDecoration(
-                                  color: Colors.black,
+                                  color: Color(0x54000000),
                                 ),
                               ),
                             ],
