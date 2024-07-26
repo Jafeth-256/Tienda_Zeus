@@ -273,6 +273,12 @@ class _BusquedaWidgetState extends State<BusquedaWidget> {
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
+                            borderRadius: const BorderRadius.only(
+                              bottomLeft: Radius.circular(10.0),
+                              bottomRight: Radius.circular(0.0),
+                              topLeft: Radius.circular(10.0),
+                              topRight: Radius.circular(0.0),
+                            ),
                           ),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(8.0),
@@ -293,10 +299,14 @@ class _BusquedaWidgetState extends State<BusquedaWidget> {
                         Container(
                           width: 200.0,
                           height: 100.0,
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                            borderRadius: BorderRadius.circular(8.0),
+                          decoration: const BoxDecoration(
+                            color: Color(0xFF212123),
+                            borderRadius: BorderRadius.only(
+                              bottomLeft: Radius.circular(0.0),
+                              bottomRight: Radius.circular(10.0),
+                              topLeft: Radius.circular(0.0),
+                              topRight: Radius.circular(10.0),
+                            ),
                           ),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
@@ -308,6 +318,7 @@ class _BusquedaWidgetState extends State<BusquedaWidget> {
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Readex Pro',
+                                      color: Colors.white,
                                       letterSpacing: 0.0,
                                     ),
                               ),
@@ -385,9 +396,14 @@ class _BusquedaWidgetState extends State<BusquedaWidget> {
                         Container(
                           width: 200.0,
                           height: 100.0,
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
+                          decoration: const BoxDecoration(
+                            color: Color(0xFF212123),
+                            borderRadius: BorderRadius.only(
+                              bottomLeft: Radius.circular(0.0),
+                              bottomRight: Radius.circular(10.0),
+                              topLeft: Radius.circular(0.0),
+                              topRight: Radius.circular(10.0),
+                            ),
                           ),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
@@ -399,6 +415,7 @@ class _BusquedaWidgetState extends State<BusquedaWidget> {
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Readex Pro',
+                                      color: Colors.white,
                                       letterSpacing: 0.0,
                                     ),
                               ),
@@ -476,9 +493,14 @@ class _BusquedaWidgetState extends State<BusquedaWidget> {
                         Container(
                           width: 200.0,
                           height: 100.0,
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
+                          decoration: const BoxDecoration(
+                            color: Color(0xFF212123),
+                            borderRadius: BorderRadius.only(
+                              bottomLeft: Radius.circular(0.0),
+                              bottomRight: Radius.circular(10.0),
+                              topLeft: Radius.circular(0.0),
+                              topRight: Radius.circular(10.0),
+                            ),
                           ),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
@@ -490,6 +512,7 @@ class _BusquedaWidgetState extends State<BusquedaWidget> {
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Readex Pro',
+                                      color: Colors.white,
                                       letterSpacing: 0.0,
                                     ),
                               ),
