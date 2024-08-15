@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'navbar_widget.dart' show NavbarWidget;
+import 'confirmacion_widget.dart' show ConfirmacionWidget;
 import 'package:flutter/material.dart';
 
-class NavbarModel extends FlutterFlowModel<NavbarWidget> {
+class ConfirmacionModel extends FlutterFlowModel<ConfirmacionWidget> {
   @override
   void initState(BuildContext context) {}
 

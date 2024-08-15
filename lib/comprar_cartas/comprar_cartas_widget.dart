@@ -1,4 +1,3 @@
-import '/components/navbar_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -34,34 +33,32 @@ class _ComprarCartasWidgetState extends State<ComprarCartasWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => _model.unfocusNode.canRequestFocus
-          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-          : FocusScope.of(context).unfocus(),
+      onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-        appBar: AppBar(
-          backgroundColor: const Color(0xFF212123),
-          automaticallyImplyLeading: false,
-          title: Text(
-            'Venta de Cartas',
-            textAlign: TextAlign.center,
-            style: FlutterFlowTheme.of(context).headlineMedium.override(
-                  fontFamily: 'Outfit',
-                  color: Colors.white,
-                  fontSize: 22.0,
-                  letterSpacing: 0.0,
-                ),
-          ),
-          actions: const [],
-          centerTitle: true,
-          elevation: 2.0,
-        ),
         body: SafeArea(
           top: true,
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: Text(
+                      'Tienda en linea',
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Readex Pro',
+                            fontSize: 36.0,
+                            letterSpacing: 0.0,
+                          ),
+                    ),
+                  ),
+                ],
+              ),
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(15.0, 60.0, 15.0, 15.0),
                 child: Row(
@@ -111,7 +108,7 @@ class _ComprarCartasWidgetState extends State<ComprarCartasWidget> {
                               ),
                             ),
                             FlutterFlowIconButton(
-                              borderColor: FlutterFlowTheme.of(context).primary,
+                              borderColor: const Color(0xFF7B4CC2),
                               borderRadius: 20.0,
                               borderWidth: 1.0,
                               buttonSize: 35.0,
@@ -172,7 +169,7 @@ class _ComprarCartasWidgetState extends State<ComprarCartasWidget> {
                               ),
                             ),
                             FlutterFlowIconButton(
-                              borderColor: FlutterFlowTheme.of(context).primary,
+                              borderColor: const Color(0xFF7B4CC2),
                               borderRadius: 20.0,
                               borderWidth: 1.0,
                               buttonSize: 35.0,
@@ -242,7 +239,7 @@ class _ComprarCartasWidgetState extends State<ComprarCartasWidget> {
                               ),
                             ),
                             FlutterFlowIconButton(
-                              borderColor: FlutterFlowTheme.of(context).primary,
+                              borderColor: const Color(0xFF7B4CC2),
                               borderRadius: 20.0,
                               borderWidth: 1.0,
                               buttonSize: 35.0,
@@ -303,7 +300,7 @@ class _ComprarCartasWidgetState extends State<ComprarCartasWidget> {
                               ),
                             ),
                             FlutterFlowIconButton(
-                              borderColor: FlutterFlowTheme.of(context).primary,
+                              borderColor: const Color(0xFF7B4CC2),
                               borderRadius: 20.0,
                               borderWidth: 1.0,
                               buttonSize: 35.0,
@@ -322,17 +319,6 @@ class _ComprarCartasWidgetState extends State<ComprarCartasWidget> {
                       ),
                     ),
                   ],
-                ),
-              ),
-              Align(
-                alignment: const AlignmentDirectional(0.0, 0.0),
-                child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 65.0, 0.0, 0.0),
-                  child: wrapWithModel(
-                    model: _model.navbarModel,
-                    updateCallback: () => setState(() {}),
-                    child: const NavbarWidget(),
-                  ),
                 ),
               ),
             ],

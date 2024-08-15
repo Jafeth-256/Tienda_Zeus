@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'home_widget.dart' show HomeWidget;
+import 'market_place_widget.dart' show MarketPlaceWidget;
 import 'package:flutter/material.dart';
 
-class HomeModel extends FlutterFlowModel<HomeWidget> {
+class MarketPlaceModel extends FlutterFlowModel<MarketPlaceWidget> {
   @override
   void initState(BuildContext context) {}
 

@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'home_widget.dart' show HomeWidget;
+import 'usuario_widget.dart' show UsuarioWidget;
 import 'package:flutter/material.dart';
 
-class HomeModel extends FlutterFlowModel<HomeWidget> {
+class UsuarioModel extends FlutterFlowModel<UsuarioWidget> {
   @override
   void initState(BuildContext context) {}
 

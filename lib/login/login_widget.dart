@@ -3,6 +3,8 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/custom_code/actions/index.dart' as actions;
+import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -116,9 +118,7 @@ class _LoginWidgetState extends State<LoginWidget>
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => _model.unfocusNode.canRequestFocus
-          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-          : FocusScope.of(context).unfocus(),
+      onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).info,
@@ -143,25 +143,23 @@ class _LoginWidgetState extends State<LoginWidget>
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 44.0, 0.0, 0.0),
-                              child: Container(
-                                width: double.infinity,
-                                constraints: const BoxConstraints(
-                                  maxWidth: 602.0,
-                                ),
-                                decoration: const BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.only(
-                                    bottomLeft: Radius.circular(16.0),
-                                    bottomRight: Radius.circular(16.0),
-                                    topLeft: Radius.circular(0.0),
-                                    topRight: Radius.circular(0.0),
-                                  ),
-                                ),
-                                alignment: const AlignmentDirectional(0.0, 0.0),
+                            Container(
+                              width: 413.0,
+                              height: 100.0,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
                               ),
+                            ),
+                            Text(
+                              'Tienda Zeus',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Readex Pro',
+                                    fontSize: 35.0,
+                                    letterSpacing: 0.0,
+                                  ),
                             ),
                             Container(
                               width: double.infinity,
@@ -1350,7 +1348,25 @@ class _LoginWidgetState extends State<LoginWidget>
                                                             return;
                                                           }
 
-                                                          context.goNamedAuth(
+                                                          await actions
+                                                              .createUser(
+                                                            _model
+                                                                .emailAddressCreateTextController
+                                                                .text,
+                                                            _model
+                                                                .passwordCreateTextController
+                                                                .text,
+                                                            random_data
+                                                                .randomString(
+                                                              10,
+                                                              25,
+                                                              true,
+                                                              true,
+                                                              true,
+                                                            ),
+                                                          );
+
+                                                          context.pushNamedAuth(
                                                               'Home',
                                                               context.mounted);
                                                         },
@@ -1612,23 +1628,6 @@ class _LoginWidgetState extends State<LoginWidget>
                       ),
                     ),
                 ],
-              ),
-              Padding(
-                padding: const EdgeInsets.all(30.0),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Tienda Zeus',
-                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Readex Pro',
-                            fontSize: 35.0,
-                            letterSpacing: 0.0,
-                          ),
-                    ),
-                  ],
-                ),
               ),
             ],
           ),
