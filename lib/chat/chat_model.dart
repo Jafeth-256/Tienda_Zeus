@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'busqueda_widget.dart' show BusquedaWidget;
+import 'chat_widget.dart' show ChatWidget;
 import 'package:flutter/material.dart';
 
-class BusquedaModel extends FlutterFlowModel<BusquedaWidget> {
+class ChatModel extends FlutterFlowModel<ChatWidget> {
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for TextField widget.

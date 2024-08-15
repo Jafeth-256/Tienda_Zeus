@@ -1,4 +1,3 @@
-import '/components/navbar_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -37,9 +36,7 @@ class _BusquedaWidgetState extends State<BusquedaWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => _model.unfocusNode.canRequestFocus
-          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-          : FocusScope.of(context).unfocus(),
+      onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: const Color(0xFFF1F4F8),
@@ -51,6 +48,7 @@ class _BusquedaWidgetState extends State<BusquedaWidget> {
             children: [
               Row(
                 mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
                     padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
@@ -154,7 +152,7 @@ class _BusquedaWidgetState extends State<BusquedaWidget> {
                 padding: const EdgeInsets.all(15.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Column(
                       mainAxisSize: MainAxisSize.max,
@@ -179,11 +177,11 @@ class _BusquedaWidgetState extends State<BusquedaWidget> {
                               topLeft: Radius.circular(10.0),
                               topRight: Radius.circular(0.0),
                             ),
-                            child: Image.network(
-                              'https://www.moosoft.com/wp-content/uploads/2022/02/VALORANT-pc.png',
+                            child: Image.asset(
+                              'assets/images/Magic.jpg',
                               width: 300.0,
                               height: 200.0,
-                              fit: BoxFit.cover,
+                              fit: BoxFit.fitHeight,
                             ),
                           ),
                         ),
@@ -209,7 +207,7 @@ class _BusquedaWidgetState extends State<BusquedaWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Text(
-                                '\nTorneo 5 vs 5 de Valorant - \nSabado 25',
+                                '\nTorneo Magic Commander -\nSabado 25',
                                 textAlign: TextAlign.start,
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
@@ -221,19 +219,30 @@ class _BusquedaWidgetState extends State<BusquedaWidget> {
                               ),
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
-                                    50.0, 10.0, 0.0, 0.0),
+                                    65.0, 10.0, 0.0, 0.0),
                                 child: FFButtonWidget(
-                                  onPressed: () {
-                                    print('Button pressed ...');
+                                  onPressed: () async {
+                                    context.pushNamed(
+                                      'RegistroTorneo',
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: const TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.fade,
+                                          duration: Duration(milliseconds: 0),
+                                        ),
+                                      },
+                                    );
                                   },
                                   text: 'Registrarse',
                                   options: FFButtonOptions(
+                                    width: 115.0,
                                     height: 30.0,
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         24.0, 0.0, 24.0, 0.0),
                                     iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    color: FlutterFlowTheme.of(context).primary,
+                                    color: const Color(0xFF7B4CC2),
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
@@ -262,7 +271,7 @@ class _BusquedaWidgetState extends State<BusquedaWidget> {
                 padding: const EdgeInsets.all(15.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Column(
                       mainAxisSize: MainAxisSize.max,
@@ -281,12 +290,17 @@ class _BusquedaWidgetState extends State<BusquedaWidget> {
                             ),
                           ),
                           child: ClipRRect(
-                            borderRadius: BorderRadius.circular(8.0),
-                            child: Image.network(
-                              'https://static.macupdate.com/products/47210/m/league-of-legends-logo.webp?v=1670420919',
+                            borderRadius: const BorderRadius.only(
+                              bottomLeft: Radius.circular(10.0),
+                              bottomRight: Radius.circular(0.0),
+                              topLeft: Radius.circular(10.0),
+                              topRight: Radius.circular(0.0),
+                            ),
+                            child: Image.asset(
+                              'assets/images/op.jpg',
                               width: 300.0,
                               height: 200.0,
-                              fit: BoxFit.cover,
+                              fit: BoxFit.contain,
                             ),
                           ),
                         ),
@@ -312,7 +326,7 @@ class _BusquedaWidgetState extends State<BusquedaWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Text(
-                                '\nTorneo 5 vs 5 de LoL - \nSabado 25',
+                                '\nTorneo One Piece TCG - \nSabado 26',
                                 textAlign: TextAlign.start,
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
@@ -324,19 +338,20 @@ class _BusquedaWidgetState extends State<BusquedaWidget> {
                               ),
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
-                                    50.0, 10.0, 0.0, 0.0),
+                                    65.0, 10.0, 0.0, 0.0),
                                 child: FFButtonWidget(
-                                  onPressed: () {
-                                    print('Button pressed ...');
+                                  onPressed: () async {
+                                    context.pushNamed('RegistroTorneo');
                                   },
                                   text: 'Registrarse',
                                   options: FFButtonOptions(
+                                    width: 115.0,
                                     height: 30.0,
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         24.0, 0.0, 24.0, 0.0),
                                     iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    color: FlutterFlowTheme.of(context).primary,
+                                    color: const Color(0xFF7B4CC2),
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
@@ -365,7 +380,7 @@ class _BusquedaWidgetState extends State<BusquedaWidget> {
                 padding: const EdgeInsets.all(15.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Column(
                       mainAxisSize: MainAxisSize.max,
@@ -376,11 +391,22 @@ class _BusquedaWidgetState extends State<BusquedaWidget> {
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
+                            borderRadius: const BorderRadius.only(
+                              bottomLeft: Radius.circular(10.0),
+                              bottomRight: Radius.circular(0.0),
+                              topLeft: Radius.circular(10.0),
+                              topRight: Radius.circular(0.0),
+                            ),
                           ),
                           child: ClipRRect(
-                            borderRadius: BorderRadius.circular(8.0),
-                            child: Image.network(
-                              'https://s.cafebazaar.ir/images/icons/com.ea.gp.fifaultimate-f7271073-5693-4d8d-b509-d0aa8a34738a_512x512.png?x-img=v1/format,type_webp,lossless_false/resize,h_256,w_256,lossless_false/optimize',
+                            borderRadius: const BorderRadius.only(
+                              bottomLeft: Radius.circular(10.0),
+                              bottomRight: Radius.circular(0.0),
+                              topLeft: Radius.circular(10.0),
+                              topRight: Radius.circular(0.0),
+                            ),
+                            child: Image.asset(
+                              'assets/images/logo.png',
                               width: 300.0,
                               height: 200.0,
                               fit: BoxFit.cover,
@@ -409,7 +435,7 @@ class _BusquedaWidgetState extends State<BusquedaWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Text(
-                                '\nTorneo 2 vs 2 de EAFC24 - \nSabado 25',
+                                '\nTorneo Pokemon TCG - \nSabado 27',
                                 textAlign: TextAlign.start,
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
@@ -421,19 +447,20 @@ class _BusquedaWidgetState extends State<BusquedaWidget> {
                               ),
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
-                                    50.0, 10.0, 0.0, 0.0),
+                                    65.0, 10.0, 0.0, 0.0),
                                 child: FFButtonWidget(
-                                  onPressed: () {
-                                    print('Button pressed ...');
+                                  onPressed: () async {
+                                    context.pushNamed('RegistroTorneo');
                                   },
                                   text: 'Registrarse',
                                   options: FFButtonOptions(
+                                    width: 115.0,
                                     height: 30.0,
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         24.0, 0.0, 24.0, 0.0),
                                     iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    color: FlutterFlowTheme.of(context).primary,
+                                    color: const Color(0xFF7B4CC2),
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
@@ -462,7 +489,7 @@ class _BusquedaWidgetState extends State<BusquedaWidget> {
                 padding: const EdgeInsets.all(15.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Column(
                       mainAxisSize: MainAxisSize.max,
@@ -475,9 +502,14 @@ class _BusquedaWidgetState extends State<BusquedaWidget> {
                                 .secondaryBackground,
                           ),
                           child: ClipRRect(
-                            borderRadius: BorderRadius.circular(8.0),
-                            child: Image.network(
-                              'https://cdn.medal.tv/games/874/cover.jpg',
+                            borderRadius: const BorderRadius.only(
+                              bottomLeft: Radius.circular(10.0),
+                              bottomRight: Radius.circular(0.0),
+                              topLeft: Radius.circular(10.0),
+                              topRight: Radius.circular(0.0),
+                            ),
+                            child: Image.asset(
+                              'assets/images/images.png',
                               width: 300.0,
                               height: 200.0,
                               fit: BoxFit.cover,
@@ -506,7 +538,7 @@ class _BusquedaWidgetState extends State<BusquedaWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Text(
-                                '\nTorneo 1 vs 1 de Fortnite - \nSabado 25',
+                                '\nTorneo Yu-Gi-Oh Avanzado - \nSabado 28',
                                 textAlign: TextAlign.start,
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
@@ -518,19 +550,20 @@ class _BusquedaWidgetState extends State<BusquedaWidget> {
                               ),
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
-                                    50.0, 10.0, 0.0, 0.0),
+                                    65.0, 10.0, 0.0, 0.0),
                                 child: FFButtonWidget(
-                                  onPressed: () {
-                                    print('Button pressed ...');
+                                  onPressed: () async {
+                                    context.pushNamed('RegistroTorneo');
                                   },
                                   text: 'Registrarse',
                                   options: FFButtonOptions(
+                                    width: 115.0,
                                     height: 30.0,
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         24.0, 0.0, 24.0, 0.0),
                                     iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    color: FlutterFlowTheme.of(context).primary,
+                                    color: const Color(0xFF7B4CC2),
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
@@ -554,11 +587,6 @@ class _BusquedaWidgetState extends State<BusquedaWidget> {
                     ),
                   ],
                 ),
-              ),
-              wrapWithModel(
-                model: _model.navbarModel,
-                updateCallback: () => setState(() {}),
-                child: const NavbarWidget(),
               ),
             ],
           ),

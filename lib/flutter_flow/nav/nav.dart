@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
+import '/main.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
@@ -72,13 +73,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const HomeWidget() : const LoginWidget(),
+          appStateNotifier.loggedIn ? const NavBarPage() : const LoginWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? const HomeWidget() : const LoginWidget(),
+              appStateNotifier.loggedIn ? const NavBarPage() : const LoginWidget(),
         ),
         FFRoute(
           name: 'Login',
@@ -88,19 +89,96 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'Home',
           path: '/home',
-          builder: (context, params) => const HomeWidget(),
+          builder: (context, params) =>
+              params.isEmpty ? const NavBarPage(initialPage: 'Home') : const HomeWidget(),
         ),
         FFRoute(
           name: 'Busqueda',
           path: '/busqueda',
-          builder: (context, params) => const BusquedaWidget(),
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'Busqueda')
+              : const BusquedaWidget(),
         ),
         FFRoute(
           name: 'ComprarCartas',
           path: '/comprarCartas',
-          builder: (context, params) => const ComprarCartasWidget(),
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'ComprarCartas')
+              : const ComprarCartasWidget(),
+        ),
+        FFRoute(
+          name: 'EditarUsuario',
+          path: '/editarUsuario',
+          builder: (context, params) => EditarUsuarioWidget(
+            nombre: params.getParam(
+              'nombre',
+              ParamType.String,
+            ),
+            image: params.getParam(
+              'image',
+              ParamType.String,
+            ),
+            email: params.getParam(
+              'email',
+              ParamType.String,
+            ),
+            userDocumentReference: params.getParam(
+              'userDocumentReference',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['users'],
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'Usuario',
+          path: '/usuario',
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'Usuario')
+              : const UsuarioWidget(),
+        ),
+        FFRoute(
+          name: 'chat',
+          path: '/chat',
+          builder: (context, params) =>
+              params.isEmpty ? const NavBarPage(initialPage: 'chat') : const ChatWidget(),
+        ),
+        FFRoute(
+          name: 'MarketPlace',
+          path: '/marketPlace',
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'MarketPlace')
+              : const MarketPlaceWidget(),
+        ),
+        FFRoute(
+          name: 'RegistroTorneo',
+          path: '/registroTorneo',
+          builder: (context, params) => const RegistroTorneoWidget(),
+        ),
+        FFRoute(
+          name: 'Confirmacion',
+          path: '/confirmacion',
+          builder: (context, params) => const ConfirmacionWidget(),
+        ),
+        FFRoute(
+          name: 'ChatEjemplo',
+          path: '/chatEjemplo',
+          builder: (context, params) => const ChatEjemploWidget(),
+        ),
+        FFRoute(
+          name: 'ProductoEjemplo',
+          path: '/productoEjemplo',
+          builder: (context, params) => const ProductoEjemploWidget(),
+        ),
+        FFRoute(
+          name: 'Tutoriales',
+          path: '/tutoriales',
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'Tutoriales')
+              : const TutorialesWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
+      observers: [routeObserver],
     );
 
 extension NavParamExtensions on Map<String, String?> {

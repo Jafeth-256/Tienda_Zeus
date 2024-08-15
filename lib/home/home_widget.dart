@@ -1,6 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
-import '/components/navbar_widget.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -36,46 +33,10 @@ class _HomeWidgetState extends State<HomeWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => _model.unfocusNode.canRequestFocus
-          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-          : FocusScope.of(context).unfocus(),
+      onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: const Color(0xFFF1F4F8),
-        appBar: AppBar(
-          backgroundColor: const Color(0xFF212123),
-          automaticallyImplyLeading: false,
-          leading: FlutterFlowIconButton(
-            borderColor: Colors.transparent,
-            borderRadius: 30.0,
-            borderWidth: 1.0,
-            buttonSize: 60.0,
-            icon: const Icon(
-              Icons.logout,
-              color: Colors.white,
-              size: 30.0,
-            ),
-            onPressed: () async {
-              GoRouter.of(context).prepareAuthEvent();
-              await authManager.signOut();
-              GoRouter.of(context).clearRedirectLocation();
-
-              context.goNamedAuth('Login', context.mounted);
-            },
-          ),
-          title: Text(
-            'Tienda Zeus',
-            style: FlutterFlowTheme.of(context).headlineMedium.override(
-                  fontFamily: 'Outfit',
-                  color: Colors.white,
-                  fontSize: 22.0,
-                  letterSpacing: 0.0,
-                ),
-          ),
-          actions: const [],
-          centerTitle: true,
-          elevation: 2.0,
-        ),
         body: SafeArea(
           top: true,
           child: SingleChildScrollView(
@@ -210,8 +171,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                                   ),
                                 ),
                                 FFButtonWidget(
-                                  onPressed: () {
-                                    print('btnTutoriales pressed ...');
+                                  onPressed: () async {
+                                    context.pushNamed('Tutoriales');
                                   },
                                   text: 'Tutoriales..',
                                   options: FFButtonOptions(
@@ -320,7 +281,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                   ],
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 40.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -398,7 +359,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                 width: 390.0,
                                 height: 1.0,
                                 decoration: const BoxDecoration(
-                                  color: Color(0x54000000),
+                                  color: Color(0x54FFFFFF),
                                 ),
                               ),
                             ],
@@ -407,14 +368,6 @@ class _HomeWidgetState extends State<HomeWidget> {
                       ],
                     ),
                   ],
-                ),
-                Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
-                  child: wrapWithModel(
-                    model: _model.navbarModel,
-                    updateCallback: () => setState(() {}),
-                    child: const NavbarWidget(),
-                  ),
                 ),
               ],
             ),
